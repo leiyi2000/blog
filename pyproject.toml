@@ -8,11 +8,13 @@ dependencies = [
     "aerich[toml]>=0.9.1",
     "django>=5.2.4",
     "granian>=2.4.1",
+    "redis[hiredis]>=6.2.0",
     "tortoise-orm>=0.25.1",
 ]
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pytest-asyncio>=1.0.0",
     "ruff>=0.12.2",
 ]
@@ -25,3 +27,6 @@ default = true
 tortoise_orm = "blog.settings.TORTOISE_ORM"
 location = "./migrations"
 src_folder = "./."
+
+[tool.pytest.ini_options]
+addopts = "-s"

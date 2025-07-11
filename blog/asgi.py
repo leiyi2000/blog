@@ -1,9 +1,7 @@
 from typing import Callable
 
 import os
-import asyncio
 
-import django
 from aerich import Command
 from tortoise import Tortoise
 from django.core.asgi import get_asgi_application
@@ -13,7 +11,6 @@ from .settings import TORTOISE_ORM, APP_NAME
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
-django.setup(set_prefix=False)
 django_asgi_app = get_asgi_application()
 
 
